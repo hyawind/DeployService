@@ -1,0 +1,891 @@
+[
+  {
+    "app_name": "App1",
+    "version": "v1.1.0",
+    "change_log": "e",
+    "deploy_time": "0001-01-01 00:00:00",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "home",
+    "version": "v1.1.0",
+    "change_log": "ce",
+    "deploy_time": "2025-05-02 21:13:25",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "home",
+    "version": "v1.1.0",
+    "change_log": "7",
+    "deploy_time": "2025-05-02 13:40:30",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "home",
+    "version": "v1.1.0",
+    "change_log": "aaa",
+    "deploy_time": "2025-05-02 13:41:07",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "home",
+    "version": "v1.1.0",
+    "change_log": "99",
+    "deploy_time": "2025-05-02 21:41:44",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "home",
+    "version": "v1.1.0",
+    "change_log": "99",
+    "deploy_time": "2025-05-02 21:41:44",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "s",
+    "deploy_time": "2025-05-02 21:49:16",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:01:44",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:01:44",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-02 23:01:55",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:02:37",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:02:38",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:04:46",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:04:53",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-02 23:05:25",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:06:57",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:07:05",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:07:15",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:07:22",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-02 23:07:52",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-02 23:08:59",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-02 23:09:09",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:37:40",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:37:50",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:37:55",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:38:00",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:40:35",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-03 15:41:05",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-03 15:42:16",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-03 15:42:27",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "王",
+    "deploy_time": "2025-05-03 15:44:08",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "完全",
+    "deploy_time": "2025-05-03 15:44:49",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "完全",
+    "deploy_time": "2025-05-03 15:45:09",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "完全",
+    "deploy_time": "2025-05-03 15:45:53",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "76",
+    "deploy_time": "2025-05-03 15:46:42",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "76",
+    "deploy_time": "2025-05-03 15:47:04",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "76",
+    "deploy_time": "2025-05-03 15:47:42",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "76",
+    "deploy_time": "2025-05-03 15:50:11",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-03 16:18:48",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "t",
+    "deploy_time": "2025-05-06 10:33:18",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "请",
+    "deploy_time": "2025-05-06 11:00:57",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-06 11:02:30",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "2",
+    "deploy_time": "2025-05-06 11:02:34",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "3",
+    "deploy_time": "2025-05-06 11:02:38",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "4",
+    "deploy_time": "2025-05-06 11:02:41",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "121",
+    "deploy_time": "2025-05-06 11:02:45",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-06 11:06:34",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-06 11:06:36",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "121",
+    "deploy_time": "2025-05-06 11:06:40",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 11:07:04",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "121",
+    "deploy_time": "2025-05-06 11:07:37",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-06 11:30:29",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:27:21",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:27:24",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1212",
+    "deploy_time": "2025-05-06 14:27:28",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:29:47",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:32:48",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:36:00",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:38:06",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1",
+    "deploy_time": "2025-05-06 14:38:55",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:40:00",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 14:40:39",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "1221",
+    "deploy_time": "2025-05-06 14:40:43",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 15:48:07",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 15:48:10",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "12",
+    "deploy_time": "2025-05-06 15:48:46",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "121",
+    "deploy_time": "2025-05-06 15:48:56",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "r",
+    "deploy_time": "2025-05-06 18:45:01",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_133102.jar",
+    "change_log": "tt",
+    "deploy_time": "2025-05-07 13:31:02",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "t2",
+    "deploy_time": "2025-05-07 14:01:08",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "t3",
+    "deploy_time": "2025-05-07 14:01:31",
+    "deploy_type": ""
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:11:49",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:13:08",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:14:10",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:16:07",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:16:29",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:16:33",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:16:42",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:16:49",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:17:08",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:22:19",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "v1.1.0",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:22:40",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:22:58",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:47:19",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 14:58:40",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 15:00:28",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "",
+    "deploy_time": "2025-05-07 15:15:05",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140131",
+    "change_log": "",
+    "deploy_time": "2025-05-07 15:16:48",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250507_140108",
+    "change_log": "切换版本",
+    "deploy_time": "2025-05-08 10:47:57",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "home",
+    "version": "home_20250515_154041",
+    "change_log": "da",
+    "deploy_time": "2025-05-15 15:40:42",
+    "deploy_type": "upload"
+  },
+  {
+    "app_name": "home",
+    "version": "home_20250515_154041",
+    "change_log": "切换版本",
+    "deploy_time": "2025-05-15 15:45:14",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "home",
+    "version": "home_20250515_154041",
+    "change_log": "切换版本",
+    "deploy_time": "2025-05-16 16:10:02",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250516_163557",
+    "change_log": "ce",
+    "deploy_time": "2025-05-16 16:35:58",
+    "deploy_type": "upload"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250516_163557",
+    "change_log": "切换版本",
+    "deploy_time": "2025-05-16 16:36:35",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250516_163557",
+    "change_log": "切换版本",
+    "deploy_time": "2025-05-16 16:37:35",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "home",
+    "version": "home_20250515_154041",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-24 18:38:12",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250516_163557",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-24 18:39:08",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250516_163557",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-24 18:39:58",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250724_184129",
+    "change_log": "1",
+    "deploy_time": "2025-07-24 18:41:29",
+    "deploy_type": "upload"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250724_184129",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-24 18:43:09",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250724_184129",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:26:22",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "1",
+    "deploy_time": "2025-07-25 11:26:44",
+    "deploy_type": "upload"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:27:25",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:28:48",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:29:31",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:29:53",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 11:36:11",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 13:30:34",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 13:53:32",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "ams",
+    "version": "ams_20250725_135442",
+    "change_log": "1",
+    "deploy_time": "2025-07-25 13:54:43",
+    "deploy_type": "upload"
+  },
+  {
+    "app_name": "ams",
+    "version": "ams_20250725_135442",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-25 13:56:33",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 12:31:52",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 12:32:23",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 12:34:02",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 12:53:06",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 12:53:30",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:21:13",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:23:03",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:23:45",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:26:23",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:37:35",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 16:39:06",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 17:41:25",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 17:47:47",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 17:55:17",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 17:58:31",
+    "deploy_type": "switch"
+  },
+  {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "change_log": "切换版本",
+    "deploy_time": "2025-07-29 18:00:39",
+    "deploy_type": "switch"
+  }
+]

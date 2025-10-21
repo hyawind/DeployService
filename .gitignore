@@ -1,0 +1,50 @@
+# 编译输出
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go 构建缓存和模块文件
+bin/
+build/
+dist/
+*.log
+
+# 临时文件
+*.tmp
+*.swp
+*.bak
+*.DS_Store
+
+# IDE 配置
+.idea/
+.vscode/
+*.iml
+
+# Go module & vendor
+vendor/
+
+# 忽略无扩展名的可执行文件（仅在根目录）
+/*
+!*/
+!*.*
+
+# 覆盖测试输出
+*.cover
+coverage.*
+
+# 环境变量文件
+.env
+
+.idea/
+
+.DS_Store
+
+*.exe
+*.zip
+*.go0725
+logs/
+uploads/

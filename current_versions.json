@@ -1,0 +1,38 @@
+{
+  "ams": {
+    "app_name": "ams",
+    "version": "ams_20250725_135442",
+    "timestamp": "2025-07-25 14:09:00",
+    "port": 8082
+  },
+  "ems": {
+    "app_name": "ems",
+    "version": "ems_20250514_201950",
+    "timestamp": "2025-05-16 12:19:09",
+    "port": 8096
+  },
+  "home": {
+    "app_name": "home",
+    "version": "home_20250515_154041",
+    "timestamp": "2025-07-25 14:09:02",
+    "port": 8081
+  },
+  "sysman": {
+    "app_name": "sysman",
+    "version": "sysman_20250725_112643",
+    "timestamp": "2025-07-29 18:00:39",
+    "port": 8080
+  },
+  "tpm": {
+    "app_name": "tpm",
+    "version": "tpm_20250513_153611",
+    "timestamp": "2025-05-16 16:14:48",
+    "port": 8092
+  },
+  "tqm": {
+    "app_name": "tqm",
+    "version": "tqm_20250509_165046",
+    "timestamp": "2025-05-16 12:19:27",
+    "port": 8098
+  }
+}

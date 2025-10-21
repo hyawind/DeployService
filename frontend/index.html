@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deploy System</title>
+  <style>
+    /* 进度条样式 */
+    #progressContainer {
+      width: 100%;
+      background-color: #f3f3f3;
+      display: none;  /* 默认隐藏进度条 */
+    }
+    #progressBar {
+      height: 20px;
+      width: 0%;
+      background-color: #4caf50;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    /* 隐藏标签样式 */
+    #progressLabel {
+      display: none;  /* 默认隐藏标签 */
+    }
+  </style>
+</head>
+<body>
+<h1>Upload and Deploy JAR File</h1>
+<form id="upload-form" enctype="multipart/form-data">
+  <label for="app_name">Choose Application:</label>
+  <select id="app-select" name="app_name" required>
+    <option value="">Select an app</option>
+  </select><br><br>
+
+  <script>
+    // Fetch application list and fill the select dropdown
+    fetch('/apps')
+            .then(response => response.json())
+            .then(appNames => {
+              const select = document.getElementById('app-select');
+              appNames.forEach(appName => {
+                const option = document.createElement('option');
+                option.value = appName;
+                option.textContent = appName;
+                select.appendChild(option);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching app names:', error);
+            });
+  </script>
+
+  <label for="jar_file">Choose JAR File:</label>
+  <input type="file" name="jar_file" required><br><br>
+
+  <label for="change_log">Change Log:</label>
+  <textarea name="change_log" required></textarea><br><br>
+
+  <button type="submit" id="upload-btn">Upload and Deploy</button>
+</form>
+
+<!-- 进度条和标签 -->
+<h3 id="progressLabel">Upload Progress:</h3>
+<div id="progressContainer">
+  <div id="progressBar"></div>
+</div>
+<div id="status"></div>
+<h3>Deployment History <button onclick="loadCurrentVersions()">Refresh</button>  <button onclick="manageAllApps('stop')">Stop All Apps</button>  <button onclick="startAllApps()">Start All Apps</button>  <button onclick="manageAllApps('restart')">Retart All Apps</button></h3>
+<!-- 一键启动按钮 -->
+
+<div id="currentVersions"></div>
+<br>
+
+<ul id="history"></ul>
+
+<script>
+  // Disable upload button and show upload in progress status
+  const uploadButton = document.getElementById('upload-btn');
+  const uploadForm = document.getElementById('upload-form');
+  const progressBar = document.getElementById('progressBar');
+  const progressContainer = document.getElementById('progressContainer');
+  const progressLabel = document.getElementById('progressLabel');
+  const status = document.getElementById('status');
+
+  function formatTimestamp() {
+    const now = new Date();
+    const pad = (n) => n.toString().padStart(2, '0');
+
+    const yyyy = now.getFullYear();
+    const MM = pad(now.getMonth() + 1);
+    const dd = pad(now.getDate());
+    const HH = pad(now.getHours());
+    const mm = pad(now.getMinutes());
+    const ss = pad(now.getSeconds());
+
+    return `${yyyy}${MM}${dd}_${HH}${mm}${ss}`;
+  }
+  // Listen to form submit event
+  uploadForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const appSelect = document.getElementById('app-select');
+    if (!appSelect.value) {
+      alert('Please select an application before uploading.');
+      return;
+    }
+
+    const fileInput = uploadForm.querySelector('input[name="jar_file"]');
+    const file = fileInput.files[0];
+    if (!file) {
+      alert('Please select a file.');
+      return;
+    }
+
+    const chunkSize = 10 * 1024 * 1024; // 10MB 每片
+    const totalChunks = Math.ceil(file.size / chunkSize);
+  //  const filename = file.name;
+    const appName = appSelect.value;
+    const timestamp = Date.now();
+    //const filename = `${appName}_${timestamp}.jar`;
+    const filename = `${appName}_${formatTimestamp()}.jar`;
+    const changeLog = uploadForm.querySelector('textarea[name="change_log"]').value;
+
+    let currentChunk = 0;
+    progressLabel.style.display = 'block';
+    progressContainer.style.display = 'block';
+    progressBar.style.width = '0%';
+    status.textContent = '0%';
+
+    uploadButton.disabled = true;
+    uploadButton.textContent = 'Uploading...';
+
+    function uploadNextChunk() {
+      const start = currentChunk * chunkSize;
+      const end = Math.min(file.size, start + chunkSize);
+      const chunk = file.slice(start, end);
+
+      const formData = new FormData();
+      formData.append('file', chunk);
+      formData.append('file_name', filename);
+      formData.append('chunk_number', currentChunk);
+      formData.append('total_chunks', totalChunks);
+      formData.append('app_name', appName);
+      formData.append('change_log', changeLog);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/uploadChunk', true);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          currentChunk++;
+          const percent = Math.round((currentChunk / totalChunks) * 100);
+          progressBar.style.width = percent + '%';
+          status.textContent = `Uploading: ${percent}%`;
+
+          if (currentChunk < totalChunks) {
+            uploadNextChunk();
+          } else {
+            // 所有分片上传完成，发起合并请求
+            mergeChunks();
+          }
+        } else {
+          alert('Chunk upload failed: ' + xhr.statusText);
+          resetUI();
+        }
+      };
+
+      xhr.onerror = function () {
+        alert('Chunk upload error.');
+        resetUI();
+      };
+
+      xhr.send(formData);
+    }
+
+    function mergeChunks() {
+      const formData = new FormData();
+      formData.append('file_name', filename);
+      formData.append('total_chunks', totalChunks);
+      formData.append('app_name', appName);
+      formData.append('change_log', changeLog);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/mergeChunks', true);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          alert('Upload successfully, please wait for deployment.');
+        } else {
+          alert('Merge failed: ' + xhr.statusText);
+        }
+        resetUI();
+      };
+
+      xhr.onerror = function () {
+        alert('Merge request error.');
+        resetUI();
+      };
+
+      xhr.send(formData);
+    }
+
+    function resetUI() {
+      uploadButton.disabled = false;
+      uploadButton.textContent = 'Upload and Deploy';
+      status.textContent = '';
+      progressLabel.style.display = 'none';
+      progressContainer.style.display = 'none';
+    }
+
+    // Start upload
+    uploadNextChunk();
+  });
+
+  // Load deployment history
+  function loadHistory(appName) {
+    if (!appName) {
+      alert('Please select an application to view its history.');
+      return;
+    }
+    fetch(`/history?app_name=${encodeURIComponent(appName)}`)
+            .then(response => response.json())
+            .then(data => {
+              let historyList = document.getElementById('history');
+              historyList.innerHTML = '';
+
+              if (data.length === 0) {
+                historyList.innerHTML = '<li>No history available.</li>';
+                return;
+              }
+
+              data.forEach(record => {
+                let li = document.createElement('li');
+                let formattedTime = new Date(record.deploy_time).toLocaleString('zh-CN', {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit',
+                });
+
+                // 文字部分
+                let textSpan = document.createElement('span');
+                textSpan.textContent = ` ${formattedTime} ${record.version}: ${record.change_log}`;
+
+                // 按钮部分
+                let button = document.createElement('button');
+                button.textContent = '切换';
+                button.style.marginLeft = '10px';
+                button.onclick = function () {
+                  switchToVersion(record.app_name, record.version);
+                };
+                if(record.deploy_type=== 'switch') {
+                  button.disabled = true;
+                }
+                li.appendChild(button);
+                li.appendChild(textSpan);
+                historyList.appendChild(li);
+              });
+            })
+            .catch(error => {
+              console.error('Error loading history:', error);
+            });
+  }
+
+  function switchToVersion(appName, version) {
+    if (!confirm(`确认切换 ${appName} 到版本 ${version} 吗？`)) return;
+
+    fetch('/switchVersion', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ app_name: appName, version: version })
+    })
+            .then(response => {
+              if (response.ok) {
+                alert(`已切换到版本 ${version}`);
+              } else {
+                alert('切换失败');
+              }
+            })
+            .catch(error => {
+              console.error('Error switching version:', error);
+              alert('请求出错');
+            });
+  }
+  function colorizeMemoryCell(used, max, percent) {
+    if (used === undefined || max === undefined || percent === undefined) return '--';
+    const color = percent >= 80 ? 'orange' : 'inherit';
+    return `<span style="color:${color};">${used} / ${max} MB (${percent}%)</span>`;
+  }
+
+  function loadCurrentVersions() {
+    document.getElementById('history').innerHTML = '';
+    fetch("/current_versions")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("获取失败");
+              }
+              return response.json();
+            })
+            .then(data => {
+              const container = document.getElementById("currentVersions");
+              let html = `
+        <table border='1' cellpadding='6' cellspacing='0'>
+          <tr>
+            <th>应用名</th>
+            <th>版本</th>
+            <th>部署时间</th>
+            <th>端口</th>
+            <th>运行状态</th>
+            <th>堆内存</th>
+            <th>非堆内存</th>
+            <th>Metaspace</th>
+            <th>JVM状态</th>
+            <th>运行日志</th>
+            <th>部署记录</th>
+          </tr>
+      `;
+
+              for (const app in data) {
+                const info = data[app];
+
+                const heap = (info.heapUsedMB !== undefined)
+                        ? colorizeMemoryCell(info.heapUsedMB, info.heapMaxMB, info.heapUsagePercent)
+                        : '--';
+
+                const nonHeap = (info.nonHeapUsedMB !== undefined)
+                        ? colorizeMemoryCell(info.nonHeapUsedMB, info.nonHeapMaxMB, info.nonHeapUsagePercent)
+                        : '--';
+
+                const metaspace = (info.metaspaceUsedMB !== undefined)
+                        ? colorizeMemoryCell(info.metaspaceUsedMB, info.metaspaceMaxMB, info.metaspacePercent)
+                        : '--';
+
+                html += `
+          <tr>
+            <td>${info.app_name || app}</td>
+            <td>${info.version}</td>
+            <td>${info.timestamp}</td>
+            <td style="text-align: center;">${info.port || '未指定'}</td>
+            <td style="text-align: center; color:${info.running ? 'green' : 'red'}">
+              ${info.running ? '运行中' : '未运行'}
+            </td>
+            <td style="text-align: center;">${heap}</td>
+            <td style="text-align: center;">${nonHeap}</td>
+            <td style="text-align: center;">${metaspace}</td>
+            <td style="text-align: center;">
+              <a href="javascript:void(0);" onclick="viewJVMStatus('${info.app_name || app}')" style="color:blue; text-decoration:none;">查看</a>
+            </td>
+            <td style="text-align: center;">
+              <a href="javascript:void(0);" onclick="viewLog('${info.version}')" style="color:blue; text-decoration:none;">查看</a>
+            </td>
+            <td style="text-align: center;">
+              <a href="javascript:void(0);" onclick="loadHistory('${info.app_name || app}')" style="color:blue; text-decoration:none;">查看</a>
+            </td>
+          </tr>
+        `;
+              }
+
+              html += "</table>";
+              container.innerHTML = html;
+            })
+            .catch(error => {
+              alert("加载失败：" + error);
+            });
+  }
+
+  function viewJVMStatus(appName) {
+    window.open(`/jvmStatus?app=${encodeURIComponent(appName)}`, '_blank');
+  }
+
+  // 查看日志逻辑
+
+  function viewLog(version) {
+    const url = `/logs?appfile=${encodeURIComponent(version)}&lines=1000`;
+    window.open(url, '_blank');  // 在新窗口中打开指定 URL
+  }
+  function startAllApps() {
+    fetch('/startAllApps', {
+      method: 'POST'
+    })
+            .then(response => {
+              if (response.ok) {
+                alert("启动请求已发送");
+              } else {
+                alert("启动失败");
+              }
+            })
+            .catch(error => {
+              console.error('启动出错:', error);
+              alert("请求出错");
+            });
+  }
+
+  function manageAllApps(action) {
+    fetch(`/manageAllApps?action=${action}`, {
+      method: 'POST'
+    })
+            .then(response => {
+              if (response.ok) {
+                alert(`${action === 'restart' ? '重启' : '停止'}请求已发送`);
+              } else {
+                alert(`${action === 'restart' ? '重启' : '停止'}失败`);
+              }
+            })
+            .catch(error => {
+              console.error(`${action}请求出错:`, error);
+              alert("请求出错");
+            });
+  }
+
+  // 在文件选择时，根据文件名自动选择应用
+  const fileInput = document.querySelector('input[name="jar_file"]');
+  fileInput.addEventListener('change', function () {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const filename = file.name.replace(/\.jar$/, ''); // 去掉 .jar 后缀
+    const appNameFromFile = filename.split('-')[0];   // 取第一个 -
+    const appSelect = document.getElementById('app-select');
+    for (const option of appSelect.options) {
+      if (option.value === appNameFromFile) {
+        appSelect.value = appNameFromFile;
+        break;
+      }
+    }
+  });
+
+  window.onload = loadCurrentVersions;
+
+
+</script>
+
+</body>
+</html>
